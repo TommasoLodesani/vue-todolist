@@ -26,12 +26,16 @@ const myApp = new Vue({
     methods : {
         addTodo(){
             if(this.inputTodo !== ""){
-                
+
                 this.newObject = { text : this.inputTodo};
                 this.todos.push(this.newObject);
                 this.inputTodo = "";
             }
            
+        },
+        deleteTodo(index){
+            this.todos.splice(index,1)
+
         }
     }    
    
