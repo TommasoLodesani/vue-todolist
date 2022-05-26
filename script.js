@@ -1,6 +1,8 @@
 const myApp = new Vue({
     el : "#app",
     data : {
+        inputTodo : "",
+        newObject : {},
         todos : [
 
             {
@@ -20,6 +22,17 @@ const myApp = new Vue({
             },
 
         ]
+    },
+    methods : {
+        addTodo(){
+            if(this.inputTodo !== ""){
+                
+                this.newObject = { text : this.inputTodo};
+                this.todos.push(this.newObject);
+                this.inputTodo = "";
+            }
+           
+        }
     }    
    
 });
