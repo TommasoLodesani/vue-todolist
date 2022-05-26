@@ -12,6 +12,10 @@
 
     <div id="app" class="container">
 
+        <div id="header">
+            <h1>Todo List</h1>
+        </div>
+
         <div class="new-todo">
             <input type="text" placeholder="Nuovo Todo" v-model="inputTodo" @keyup.enter="addTodo">
             <button @click="addTodo">Aggiungi</button>
@@ -19,7 +23,7 @@
 
         <div class="todos-container">
             <ul>
-                <li v-for="(todo,i) in todos " class="todo" :class="todos[i].done === true ? 'style_text' : '' ">
+                <li v-for="(todo,i) in todos " class="todo" :key="i" :class="todos[i].done === true ? 'style_text' : '' " >
                     {{todos[i].text}}
                     <i class="fas fa-times" @click="deleteTodo(i)"></i>
                 </li>

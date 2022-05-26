@@ -26,9 +26,10 @@ const myApp = new Vue({
     methods : {
         addTodo(){
             if(this.inputTodo !== ""){
-                this.newObject = { text : this.inputTodo, done : true};
+                this.newObject = { text : this.inputTodo, done : false};
                 this.todos.push(this.newObject);
                 this.inputTodo = "";
+                // console.log(this.todos);
             }
            
         },
@@ -37,15 +38,20 @@ const myApp = new Vue({
 
         },
         changeStatus(){
-            if(this.done === false){
-                this.done = true;
-            } else{
-                this.done = false
-            };
+            // if(this.done){
+            //     this.done = false;
+            // } else{
+            //     this.done = true
+            // };
+
+            this.done = !this.done
+
         },
     }    
    
 });
+
+
 
 
 
