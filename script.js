@@ -37,16 +37,16 @@ const myApp = new Vue({
             this.todos.splice(index,1)
 
         },
-        changeStatus(){
-            // if(this.done){
-            //     this.done = false;
-            // } else{
-            //     this.done = true
-            // };
+        // changeStatus(){
+        //     // if(this.done){
+        //     //     this.done = false;
+        //     // } else{
+        //     //     this.done = true
+        //     // };
 
-            this.done = !this.done
+        //     this.done = !this.done
 
-        },
+        // },
     }    
    
 });

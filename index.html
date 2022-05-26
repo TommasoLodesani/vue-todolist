@@ -23,9 +23,12 @@
 
         <div class="todos-container">
             <ul>
-                <li v-for="(todo,i) in todos " class="todo" :key="i" :class="todos[i].done === true ? 'style_text' : '' " >
+                <li v-for="(todo,i) in todos " class="todo" :key="i" 
+                :class="todos[i].done === true ? 'active' : '' " 
+                 @click="todos[i].done = !todos[i].done" >
                     {{todos[i].text}}
                     <i class="fas fa-times" @click="deleteTodo(i)"></i>
+                   
                 </li>
             </ul>
         </div>
@@ -41,3 +44,7 @@
     
 </body>
 </html>
+
+
+
+<!-- :class="{ active : todos[i].done}" -->
